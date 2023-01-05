@@ -1,13 +1,11 @@
 import React from 'react'
 
-export default function Tasks(tasks) {
+export default function Tasks(props) {
 
   return (
     <div className="tasks">
-       <h2>
-        {tasks.title}
-        {tasks.desc}
-       </h2>
+        {props.tasks.title}
+        {props.tasks.desc}
     </div>
   )
 }
