@@ -1,0 +1,9 @@
+.tasks{
+    width: 90%;
+    /* height: 20%; */
+    border:  2px solid transparent;
+    background: #1f1f38;
+    color: white;
+    padding: 30px;
+}
+

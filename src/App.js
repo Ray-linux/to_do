@@ -18,6 +18,16 @@ function App() {
       sno: 3,
       title: "Go to the ghat",
       desc: "you need to go to the ghat to get this job done"
+    },
+    {
+      sno: 4,
+      title: "Go to the home",
+      desc: "you need to go to the ghat to get this job done"
+    },
+    {
+      sno: 5,
+      title: "Go to the ghar",
+      desc: "you need to go to the ghat to get this job done"
     }
   ]
   return (

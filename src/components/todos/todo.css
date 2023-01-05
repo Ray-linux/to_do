@@ -1,0 +1,7 @@
+.todos{
+    width: 45%;
+    height: 60vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
