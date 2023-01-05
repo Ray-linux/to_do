@@ -1,23 +1,29 @@
-import logo from './logo.svg';
 import './App.css';
+import Control from './components/controlBox/Control';
+import Todos from './components/todos/Todos';
 
 function App() {
+  let tasks = [
+    {
+      sno: 1,
+      title: "Go to the market",
+      desc: "you need to go to the market to get this job done"
+    },
+    {
+      sno: 2,
+      title: "Go to the mall",
+      desc: "you need to go to the mall to get this job done"
+    },
+    {
+      sno: 3,
+      title: "Go to the ghat",
+      desc: "you need to go to the ghat to get this job done"
+    }
+  ]
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="container">
+      <Control/>
+    <Todos tasks={tasks}/>
     </div>
   );
 }
