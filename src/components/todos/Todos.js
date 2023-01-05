@@ -5,7 +5,10 @@ import './todo.css'
 export default function Todos(props) {
   return (
     <div className='todos'>
-      <Tasks tasks = {props.tasks[1]}/>
+      {props.tasks.map((task) =>{
+          return <Tasks tasks = {task}/>
+      })}
+      
     </div>
   )
 }

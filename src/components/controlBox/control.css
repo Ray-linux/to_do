@@ -1,5 +1,5 @@
 .control_container{
-    background-color: #8b063bdd;
+    background-color: #86cfe7dd;
     width: 45%;
     margin: 25px;
     border: 2px solid transparent;
@@ -11,22 +11,68 @@
     padding: 20px;
 }
 
+.todo_icon{
+    margin: 0 5px;
+    font-size: 32px;
+}
+
 .control_container h1{
     margin: 2px;
 }
-.controls input{
+.controls{
+    display: flex;
+    flex-direction: column;
+}
+.controls .title{
     width: 25rem;
     height: 2.5rem;
-    color: red;
     border: 2px solid transparent;
     border-radius: 5px;
     margin: 4px;
     background-color:  rgb(101, 235, 226);
+    padding: 10px;
+}
+
+.controls .desc{
+    width: 25rem;
+    height: 4.5rem;
+    border: 2px solid transparent;
+    border-radius: 5px;
+    margin: 4px;
+    background-color:  rgb(101, 235, 226);
+    padding: 10px;
+}
+textarea{
+    resize: none;
+}
+
+#high, #medium, #low{
+    width: 30px;
+    background: transparent;
+    margin: 4px 9px;
+    font-size: 19px;
+    cursor: pointer;
+}
+#high{
+    color: red;
+}
+#high{
+    color: red;
+}
+#medium{
+    color: yellow;
+}
+#low{
+    color: blue;
+}
+.controls .btn{
+    display: flex;
+    justify-content: end;
 }
 .controls button{
     width: 3.9rem;
     height: 2.5rem;
     border: 2px solid transparent;
     background-color: burlywood;
-    border-radius: 5px;
+    border-radius: 5px; 
 }
