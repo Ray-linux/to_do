@@ -1,9 +1,17 @@
+import React, { useState } from 'react';
 import './App.css';
 import Control from './components/controlBox/Control';
 import Todos from './components/todos/Todos';
 
 function App() {
-  let tasks = [
+  const onDelete = (task) => {
+    console.log("deleted", task);
+
+    setTasks(tasks.filter((e) => {
+      return e!==task;
+    }))
+  }
+  const [tasks, setTasks] = useState([
     {
       sno: 1,
       title: "Go to the market",
@@ -29,11 +37,12 @@ function App() {
       title: "Go to the ghar",
       desc: "you need to go to the ghat to get this job done"
     }
-  ]
+  ])
+
   return (
     <div className="container">
       <Control/>
-    <Todos tasks={tasks}/>
+    <Todos tasks={tasks} onDelete={onDelete}/>
     </div>
   );
 }
