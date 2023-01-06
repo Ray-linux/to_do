@@ -20,7 +20,7 @@ export default function Tasks({tasks, onDelete}) {
         <div className="task_btns">
         <button className='task_btn' onClick={() => setButtonPopup(true)}><FcCheckmark/></button>
         <button className='task_btn' onClick={() => {onDelete(tasks);}}><HiXMark/></button>
-        <Gpopup trigger={buttonPopup} setTrigger = {setButtonPopup}/>
+        <Gpopup trigger={buttonPopup} setTrigger = {setButtonPopup} task = {tasks} onDelete = {onDelete}/>
         </div>
       </div>
     </div>

@@ -7,7 +7,7 @@ export default function Gpopup(props) {
   return (props.trigger) ? (
     <div className='gpopup'>
         <div className="gpopup_inner">
-            <button className='close_btn' onClick={() => {props.setTrigger(false)}}><HiXMark/></button>
+            <button className='close_btn' onClick={() => {props.setTrigger(false); props.onDelete(props.task)}}><HiXMark/></button>
             <h2><FaRegThumbsUp id='xicon'/>congratulations, you completed your task</h2>
         </div>
     </div>
