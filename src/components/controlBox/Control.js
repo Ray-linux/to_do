@@ -25,11 +25,11 @@ export default function Control(props) {
           <form onSubmit={submit}>
             <input className='title' type="text" value={title} onChange={(e) => {setTitle(e.target.value)}} placeholder='Title...'/>
             <textarea className='desc' name="desc" id="desc" value={desc} onChange={(e) => {setDesc(e.target.value)}} cols="30" rows="20" placeholder='Description...'></textarea>
-            <div className='priority'>
+            {/* <div className='priority'>
               <button id='high'><BsFillFlagFill/></button>
               <button id='medium'><BsFillFlagFill/></button>
               <button id='low'><BsFillFlagFill/></button>
-            </div>
+            </div> */}
             <div className="btn">
             <button type='submit'>Add</button>
             </div>
