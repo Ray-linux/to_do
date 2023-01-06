@@ -21,7 +21,7 @@ function App() {
     localStorage.setItem("tasks", JSON.stringify(tasks));
   }
 
-  const addTask = (title, desc) => {
+  const AddTask = (title, desc) => {
   console.log("new todo", title, " " , desc);
   let sno;
     if(tasks.length==0){
@@ -37,19 +37,16 @@ function App() {
     }
     setTasks([...tasks, mytask]);
     console.log(mytask);
-    // useEffect(() => {
-    //   localStorage.setItem("tasks", JSON.stringify(tasks));
-    // }, [tasks])
-    
-
-    
   } 
 
-  const [tasks, setTasks] = useState(initTasks)
+  const [tasks, setTasks] = useState(initTasks);
+  useEffect(() => {
+    localStorage.setItem("tasks", JSON.stringify(tasks));
+  }, [tasks])
 
   return (
     <div className="container">
-      <Control addTask = {addTask}/>
+      <Control addTask = {AddTask}/>
     <Todos tasks={tasks} onDelete={onDelete}/>
     </div>
   );
