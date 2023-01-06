@@ -1,9 +1,12 @@
-import React from 'react'
+import React, { useState } from 'react'
 import './tasks.css'
 import {FcCheckmark} from 'react-icons/fc'
 import {HiXMark} from 'react-icons/hi2'
+import Gpopup from '../popups/Gpopup'
 
 export default function Tasks({tasks, onDelete}) {
+
+  const [buttonPopup, setButtonPopup] = useState(false);
 
   return (
     <>
@@ -15,8 +18,9 @@ export default function Tasks({tasks, onDelete}) {
       <div className="task_footer">
         <h4>{tasks.time}</h4>
         <div className="task_btns">
-        <button className='task_btn'><FcCheckmark/></button>
-        <button className='task_btn' onClick={() => {onDelete(tasks)}}><HiXMark/></button>
+        <button className='task_btn' onClick={() => setButtonPopup(true)}><FcCheckmark/></button>
+        <button className='task_btn' onClick={() => {onDelete(tasks);}}><HiXMark/></button>
+        <Gpopup trigger={buttonPopup} setTrigger = {setButtonPopup}/>
         </div>
       </div>
     </div>
