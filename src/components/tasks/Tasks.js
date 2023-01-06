@@ -13,7 +13,7 @@ export default function Tasks({tasks, onDelete}) {
         </div>
       <div className="task_desc">{tasks.desc}</div>
       <div className="task_footer">
-        <h4>tme: 2.30pm </h4>
+        <h4>{tasks.time}</h4>
         <div className="task_btns">
         <button className='task_btn'><FcCheckmark/></button>
         <button className='task_btn' onClick={() => {onDelete(tasks)}}><HiXMark/></button>

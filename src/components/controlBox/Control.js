@@ -11,7 +11,11 @@ export default function Control(props) {
     if(!title){
       alert("Title can't be empty")
     }
+    else{
     props.addTask(title, desc);
+    setTitle("");
+    setDesc("");
+    }
   }
   return (
     <>
