@@ -1,47 +1,55 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect} from 'react';
 import './App.css';
 import Control from './components/controlBox/Control';
 import Todos from './components/todos/Todos';
 
 function App() {
+  let initTasks;
+  if(localStorage.getItem("tasks") === null){
+    initTasks = [];
+  }
+  else{
+    initTasks = JSON.parse( localStorage.getItem("tasks"));
+  }
+
   const onDelete = (task) => {
     console.log("deleted", task);
 
     setTasks(tasks.filter((e) => {
       return e!==task;
     }))
+    localStorage.setItem("tasks", JSON.stringify(tasks));
   }
-  const [tasks, setTasks] = useState([
-    {
-      sno: 1,
-      title: "Go to the market",
-      desc: "you need to go to the market to get this job done"
-    },
-    {
-      sno: 2,
-      title: "Go to the mall",
-      desc: "you need to go to the mall to get this job done"
-    },
-    {
-      sno: 3,
-      title: "Go to the ghat",
-      desc: "you need to go to the ghat to get this job done"
-    },
-    {
-      sno: 4,
-      title: "Go to the home",
-      desc: "you need to go to the ghat to get this job done"
-    },
-    {
-      sno: 5,
-      title: "Go to the ghar",
-      desc: "you need to go to the ghat to get this job done"
+
+  const addTask = (title, desc) => {
+  console.log("new todo", title, " " , desc);
+  let sno;
+    if(tasks.length==0){
+      sno = 0;
     }
-  ])
+    else {
+      sno = tasks[tasks.length-1].sno + 1;
+    }
+    const mytask = {
+      sno: sno,
+      title: title,
+      desc : desc,
+    }
+    setTasks([...tasks, mytask]);
+    console.log(mytask);
+    // useEffect(() => {
+    //   localStorage.setItem("tasks", JSON.stringify(tasks));
+    // }, [tasks])
+    
+
+    
+  } 
+
+  const [tasks, setTasks] = useState(initTasks)
 
   return (
     <div className="container">
-      <Control/>
+      <Control addTask = {addTask}/>
     <Todos tasks={tasks} onDelete={onDelete}/>
     </div>
   );

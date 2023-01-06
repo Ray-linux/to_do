@@ -19,7 +19,7 @@
 .control_container h1{
     margin: 2px;
 }
-.controls{
+.controls form{
     display: flex;
     flex-direction: column;
 }
