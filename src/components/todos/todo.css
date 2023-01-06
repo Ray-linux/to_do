@@ -5,3 +5,13 @@
     flex-direction: column;
     align-items: center;
 }
+@media screen and (max-width: 1024px) {
+    .todos{
+        width: 70%;
+    }
+    
+}
+
+@media screen and (max-width: 600px) {
+    
+}

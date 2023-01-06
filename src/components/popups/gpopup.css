@@ -39,3 +39,13 @@
     font-size: 30px;
     margin-right: 5px;
 }
+@media screen and (max-width: 1024px) {
+    .gpopup_inner {
+        max-width: 80%;
+    }
+    
+}
+
+@media screen and (max-width: 600px) {
+    
+}
