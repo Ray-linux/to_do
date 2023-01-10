@@ -26,6 +26,8 @@ function App() {
     let now = new Date();
     let hour;
     let apm;
+    let arrMonth = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'June', 'July', 'Aug', 'Sept', 'Oct', 'Nov', 'Dec'];
+    let dayNames = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
     
     let h = now.getHours()
     if(h<=23 && h>12){
@@ -48,7 +50,13 @@ function App() {
     
     let hour_minute = hour.concat(":", m);
     let full_time = hour_minute.concat(" ", apm);
-    
+    let day = dayNames[now.getDay()]
+    let date = now.getDate()
+    let month =arrMonth[now.getMonth()]
+    let year = now.getFullYear()
+
+
+
   let sno;
     if(tasks.length===0){
       sno = 0;
@@ -61,6 +69,10 @@ function App() {
       title: title,
       desc : desc,
       time : full_time,
+      date: date,
+      month: month,
+      year: year,
+      day: day
     }
     setTasks([...tasks, mytask]);
     console.log(mytask);

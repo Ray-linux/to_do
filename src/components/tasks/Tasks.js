@@ -16,7 +16,7 @@ export default function Tasks({tasks, onDelete}) {
         </div>
       <div className="task_desc">{tasks.desc}</div>
       <div className="task_footer">
-        <h4>{tasks.time}</h4>
+        <h4>{tasks.day} {tasks.time} {tasks.date}-{tasks.month}-{tasks.year}</h4>
         <div className="task_btns">
         <button className='task_btn' onClick={() => setButtonPopup(true)}><FcCheckmark/></button>
         <button className='task_btn' onClick={() => {onDelete(tasks);}}><HiXMark/></button>
